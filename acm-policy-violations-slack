@@ -1,2 +1,5 @@
+---
 - name: post policy violations to slack
-  shell: '{{ slack_api_url }}'
+  hosts: localhost
+  tasks:
+    - shell: 'curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' {{ slack_api_url }}'
